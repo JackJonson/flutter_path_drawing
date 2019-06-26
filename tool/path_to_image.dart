@@ -84,7 +84,7 @@ Future<Uint8List> getPathPngBytes(String pathString) async {
   final int imgHeight =
       (max(bounds.height, bounds.bottom) * 2 * scaleFactor).ceil();
 
-  final Image image = pict.toImage(imgWidth, imgHeight);
+  final Image image =await  pict.toImage(imgWidth, imgHeight);
   final ByteData bytes = await image.toByteData(format: ImageByteFormat.png);
 
   return bytes.buffer.asUint8List();
